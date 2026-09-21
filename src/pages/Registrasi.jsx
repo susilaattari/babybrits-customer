@@ -41,7 +41,7 @@ export default function Registrasi() {
   };
 
   return (
-    <div className="animate-fade-in pb-32">
+    <div className="animate-fade-in pb-48">
       <Navbar title="Form Pemesanan" showBack />
       <StepIndicator steps={STEPS} current={step} />
       <div className="h-px bg-cream-200" />
@@ -293,21 +293,23 @@ export default function Registrasi() {
       )}
 
       {/* Fixed Bottom Button */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-mobile bg-white border-t border-cream-200 p-4 shadow-bottom-nav">
-        <div className="flex gap-3">
-          {step > 0 && (
-            <button onClick={() => setStep(step - 1)} className="btn-outline py-3 flex-1">
-              ← Kembali
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-cream-200 shadow-bottom-nav">
+        <div className="max-w-[430px] mx-auto p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <div className="flex gap-3">
+            {step > 0 && (
+              <button onClick={() => setStep(step - 1)} className="btn-outline py-3 flex-1">
+                ← Kembali
+              </button>
+            )}
+            <button
+              id={`btn-step-${step}`}
+              onClick={handleNext}
+              disabled={!canNext()}
+              className={`btn-brand flex-1 transition-opacity ${!canNext() ? 'opacity-50 cursor-not-allowed' : ''}`}
+            >
+              {step === STEPS.length - 1 ? '✨ Buat Booking' : 'Lanjutkan →'}
             </button>
-          )}
-          <button
-            id={`btn-step-${step}`}
-            onClick={handleNext}
-            disabled={!canNext()}
-            className={`btn-brand flex-1 transition-opacity ${!canNext() ? 'opacity-50 cursor-not-allowed' : ''}`}
-          >
-            {step === STEPS.length - 1 ? '✨ Buat Booking' : 'Lanjutkan →'}
-          </button>
+          </div>
         </div>
       </div>
     </div>

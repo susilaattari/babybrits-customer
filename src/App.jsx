@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import BottomNav from './components/layout/BottomNav';
 import Katalog from './pages/Katalog';
 import DetailBarang from './pages/DetailBarang';
@@ -7,15 +7,17 @@ import KonfirmasiBooking from './pages/KonfirmasiBooking';
 import DashboardSewa from './pages/DashboardSewa';
 import MemberCard from './pages/MemberCard';
 
-// Halaman yang tidak menampilkan BottomNav
-const NO_BOTTOM_NAV = ['/barang/', '/booking/registrasi', '/booking/konfirmasi'];
-
 function Layout({ children }) {
-  const showNav = !NO_BOTTOM_NAV.some(p => window.location.pathname.startsWith(p));
+  const location = useLocation();
+  // Sembunyikan BottomNav pada halaman detail barang dan alur checkout/booking
+  const hideBottomNav =
+    location.pathname.startsWith('/barang') ||
+    location.pathname.startsWith('/booking');
+
   return (
     <>
       {children}
-      {showNav && <BottomNav />}
+      {!hideBottomNav && <BottomNav />}
     </>
   );
 }

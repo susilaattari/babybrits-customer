@@ -30,7 +30,7 @@ export default function DetailBarang() {
   };
 
   return (
-    <div className="animate-fade-in pb-48">
+    <div className="animate-fade-in pb-60">
       <Navbar title={item.nama} showBack />
 
       {/* Hero Gambar */}
@@ -160,23 +160,25 @@ export default function DetailBarang() {
       </div>
 
       {/* Fixed Bottom CTA */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-mobile bg-white border-t border-cream-200 p-4 shadow-bottom-nav">
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <p className="text-[10px] text-ink-400">Total yang dibayar</p>
-            <p className="text-xl font-extrabold text-ink-900">
-              {formatRupiah(hargaDipilih + 100000)}
-            </p>
-            <p className="text-[10px] text-ink-400">(Sewa {labelDurasi} + Deposit Rp 100.000)</p>
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-cream-200 shadow-bottom-nav">
+        <div className="max-w-[430px] mx-auto px-4 pt-3.5 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <p className="text-[10px] text-ink-400">Total yang dibayar</p>
+              <p className="text-xl font-extrabold text-ink-900">
+                {formatRupiah(hargaDipilih + 100000)}
+              </p>
+              <p className="text-[10px] text-ink-400">(Sewa {labelDurasi} + Deposit Rp 100.000)</p>
+            </div>
+            <div className="text-right">
+              <p className="text-[10px] text-ink-400">Sewa</p>
+              <p className="text-base font-bold text-pink-500">{labelDurasi}</p>
+            </div>
           </div>
-          <div className="text-right">
-            <p className="text-[10px] text-ink-400">Sewa</p>
-            <p className="text-base font-bold text-pink-500">{labelDurasi}</p>
-          </div>
+          <button id="btn-pesan-sekarang" onClick={handlePesan} className="btn-brand">
+            Pesan Sekarang <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
-        <button id="btn-pesan-sekarang" onClick={handlePesan} className="btn-brand">
-          Pesan Sekarang <ChevronRight className="w-4 h-4" />
-        </button>
       </div>
     </div>
   );

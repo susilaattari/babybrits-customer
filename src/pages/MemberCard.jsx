@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Copy, CheckCircle, Share2, Baby, MessageCircle, QrCode } from 'lucide-react';
 import Navbar from '../components/layout/Navbar';
-import { sewaDummy } from '../data/dummy';
+import { sewaDummy, ADMIN_WA } from '../data/dummy';
 
 // Simulasi QR Code visual
 function QRCodeVisual({ size = 140 }) {
@@ -169,7 +169,7 @@ export default function MemberCard() {
           <p className="text-xs font-bold text-ink-900 mb-2">Ada pertanyaan?</p>
           <p className="text-[11px] text-ink-500 mb-3">Hubungi admin Babybrits Cilegon via WhatsApp</p>
           <a
-            href={`https://wa.me/6281234567890?text=Halo%20Admin%20Babybrits%20Cilegon%20%F0%9F%91%8B%0A%0AMember%3A%20${member.memberCode}%0ANama%3A%20${member.nama}%0A%0AIngin%20bertanya...`}
+            href={`https://wa.me/${ADMIN_WA}?text=Halo%20Admin%20Babybrits%20Cilegon%20%F0%9F%91%8B%0A%0AMember%3A%20${member.memberCode}%0ANama%3A%20${member.nama}%0A%0AIngin%20bertanya...`}
             target="_blank"
             rel="noreferrer"
             id="btn-hubungi-admin"
