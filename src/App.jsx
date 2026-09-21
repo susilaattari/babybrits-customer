@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import BottomNav from './components/layout/BottomNav';
+import InstallPrompt from './components/ui/InstallPrompt';
+import OfflineIndicator from './components/ui/OfflineIndicator';
 import Katalog from './pages/Katalog';
 import DetailBarang from './pages/DetailBarang';
 import Registrasi from './pages/Registrasi';
@@ -16,6 +18,8 @@ function Layout({ children }) {
 
   return (
     <>
+      <OfflineIndicator />
+      <InstallPrompt />
       {children}
       {!hideBottomNav && <BottomNav />}
     </>

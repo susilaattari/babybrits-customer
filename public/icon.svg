@@ -9,35 +9,47 @@
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#1a1a2e" flood-opacity="0.25" />
+    </filter>
   </defs>
 
   <!-- Background with Brand Gradient -->
   <rect width="512" height="512" rx="128" fill="url(#brandGrad)" />
   <rect width="512" height="512" rx="128" fill="url(#innerGlow)" />
 
-  <!-- Cute Stroller Art -->
-  <g>
+  <!-- Cute Stroller / Baby Carriage Art -->
+  <g filter="url(#shadow)">
     <!-- Hood / Canopy of Stroller -->
     <path d="M 160 250 A 110 110 0 0 1 370 250 L 160 250 Z" fill="#ffffff" />
     
-    <!-- Stroller Body -->
+    <!-- Stroller Body / Bassinet -->
     <path d="M 150 250 Q 150 330 270 330 Q 380 330 380 250 Z" fill="#ffffff" opacity="0.95" />
 
     <!-- Stroller Handle -->
     <path d="M 140 230 L 105 160 Q 98 145 115 135 Q 130 125 140 142 L 175 210" 
-          fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
-
-    <!-- Frame -->
-    <path d="M 195 290 L 175 390 M 325 290 L 345 390 M 175 390 L 345 390" 
           fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
 
-    <!-- Wheels -->
+    <!-- Stroller Chassis / Frame -->
+    <path d="M 195 290 L 175 390 M 325 290 L 345 390 M 175 390 L 345 390" 
+          fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Left Wheel -->
     <circle cx="175" cy="395" r="32" fill="#ffffff" />
     <circle cx="175" cy="395" r="16" fill="#e91e8c" />
+    <circle cx="175" cy="395" r="6" fill="#ffffff" />
+
+    <!-- Right Wheel -->
     <circle cx="345" cy="395" r="32" fill="#ffffff" />
     <circle cx="345" cy="395" r="16" fill="#00bcd4" />
+    <circle cx="345" cy="395" r="6" fill="#ffffff" />
 
     <!-- Sparkle Stars -->
+    <!-- Star 1 -->
     <path d="M 370 120 Q 370 145 395 145 Q 370 145 370 170 Q 370 145 345 145 Q 370 145 370 120 Z" fill="#fff9c4" />
+    <!-- Star 2 -->
+    <path d="M 280 110 Q 280 122 292 122 Q 280 122 280 134 Q 280 122 268 122 Q 280 122 280 110 Z" fill="#ffffff" opacity="0.9" />
+    <!-- Heart Motif -->
+    <path d="M 265 200 C 265 190 252 182 242 192 C 232 182 219 190 219 200 C 219 216 242 228 242 228 C 242 228 265 216 265 200 Z" fill="#e91e8c" />
   </g>
 </svg>
